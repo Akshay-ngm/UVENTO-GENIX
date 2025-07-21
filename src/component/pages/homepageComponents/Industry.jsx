@@ -72,10 +72,9 @@ const Industries = () => {
           <span className={`industries-badge ${isVisible ? "animate-in" : ""}`}>
             Industries We Serve
           </span>
-          <h2 className={`industries-title ${isVisible ? "animate-in" : ""}`}>
-            Powering Innovation Across{" "}
-            <span className="gradient-text">Industries</span>
-          </h2>
+          <p className={`industries-title ${isVisible ? "animate-in" : ""}`}>
+            Powering Innovation Across Industries
+          </p>
           <p className={`industries-subtitle ${isVisible ? "animate-in" : ""}`}>
             We deliver cutting-edge engineering solutions that drive operational
             excellence across diverse sectors
@@ -99,26 +98,6 @@ const Industries = () => {
               <p className="industry-description">{industry.description}</p>
             </div>
           ))}
-        </div>
-
-        {/* CTA Section */}
-        <div className={`industries-cta ${isVisible ? "animate-in" : ""}`}>
-          <h3 className="cta-title">Ready to Transform Your Industry?</h3>
-          <p className="cta-description">
-            Partner with us to unlock new possibilities and drive innovation in
-            your sector
-          </p>
-          <button className="cta-button">
-            <span>Get Started</span>
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </button>
         </div>
       </div>
     </section>

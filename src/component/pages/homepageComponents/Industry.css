@@ -16,17 +16,24 @@
 }
 
 .industries-badge {
-  display: inline-block;
-  padding: 6px 16px;
-  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-  color: white;
-  font-size: 0.875rem;
-  font-weight: 500;
-  border-radius: 20px;
-  margin-bottom: 16px;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 40px;
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(30px);
   transition: all 0.8s ease;
+  position: relative;
+}
+.industries-badge::after {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  margin: 0 auto;
+  border-radius: 2px;
+  transition: all 0.7s ease;
+  transition-delay: 0.2s;
+  opacity: 0;
+  transform: scaleX(0);
 }
 
 .industries-badge.animate-in {
@@ -35,8 +42,8 @@
 }
 
 .industries-title {
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: 2rem;
+  /* font-weight: 700; */
   color: #1f2937;
   margin-bottom: 16px;
   opacity: 0;
@@ -246,71 +253,6 @@
 }
 .tool-rooms::after {
   background: linear-gradient(135deg, #f59e0b, #d97706);
-}
-
-/* CTA Section */
-.industries-cta {
-  background: white;
-  padding: 32px;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  border: 1px solid #e5e7eb;
-  text-align: center;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.8s ease 0.6s;
-}
-
-.industries-cta.animate-in {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.cta-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #1f2937;
-  margin-bottom: 8px;
-}
-
-.cta-description {
-  color: #6b7280;
-  margin-bottom: 20px;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.cta-button {
-  display: inline-flex;
-  align-items: center;
-  padding: 12px 24px;
-  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-  color: white;
-  font-weight: 500;
-  border-radius: 12px;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
-}
-
-.cta-button:hover {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
-  background: linear-gradient(135deg, #2563eb, #7c3aed);
-}
-
-.cta-button svg {
-  margin-left: 8px;
-  width: 16px;
-  height: 16px;
-  transition: transform 0.3s ease;
-}
-
-.cta-button:hover svg {
-  transform: translateX(2px);
 }
 
 /* Responsive Design */

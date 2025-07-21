@@ -26,8 +26,26 @@ const Hero = () => {
               Engineering Excellence Through Innovation Since 2021
             </p>
             <div className={styles["hero-cta"]}>
-              <a href="#services-section" className={styles["cta-button"]}>
-                Explore Our Solutions
+              <a
+                href="#services-section"
+                className={styles["cta-button"]}
+                onClick={(e) => {
+                  e.preventDefault();
+                  const target = document.getElementById("services-section");
+                  if (target) {
+                    const headerOffset = 80; // change this to your header's height in pixels
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition =
+                      elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                      top: offsetPosition,
+                      behavior: "smooth",
+                    });
+                  }
+                }}
+              >
+                Explore Our Services
               </a>
             </div>
           </div>

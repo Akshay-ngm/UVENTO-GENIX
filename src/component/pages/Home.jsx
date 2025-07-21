@@ -1,6 +1,7 @@
 import React from "react";
 // import CompletHomepage from "./Hero1";
-import AboutSection from "./homepageComponents/About";
+// import AboutSection from "./homepageComponents/About";
+import About from "./homepageComponents/About1";
 // import Industries from "./homepageComponents/Industries";
 import Industries from "./homepageComponents/Industry";
 import Services from "./homepageComponents/Services";
@@ -16,7 +17,7 @@ const Home = () => {
       <Services />
       <Industries />
       <Clients />
-      <AboutSection />
+      <About />
       <Contact />
       <Footer />
     </>
