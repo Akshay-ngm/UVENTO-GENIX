@@ -233,7 +233,10 @@
   .servicesTitle {
     font-size: 2rem;
   }
-
+  .servicesGrid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
   .serviceIcon {
     font-size: 2.5rem;
   }
