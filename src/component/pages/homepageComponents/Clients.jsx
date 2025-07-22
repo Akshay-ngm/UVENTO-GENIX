@@ -9,7 +9,10 @@ const Clients = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setIsVisible((prev) => ({ ...prev, [entry.target.id]: true }));
+            setIsVisible((prev) => ({
+              ...prev,
+              [entry.target.dataset.section]: true,
+            }));
           }
         });
       },
@@ -35,7 +38,7 @@ const Clients = () => {
       <section className="clients-section">
         <div className="clients-container">
           <h2
-            id="clients"
+            data-section="clients"
             className="animate-on-scroll clients-title"
             style={{
               opacity: isVisible.clients ? 1 : 0,

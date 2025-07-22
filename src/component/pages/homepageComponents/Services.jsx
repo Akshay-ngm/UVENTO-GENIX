@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./Services.css";
+import "./Services1.css";
 
 const Services = () => {
   const [isVisible, setIsVisible] = useState(false);

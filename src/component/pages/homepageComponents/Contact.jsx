@@ -95,7 +95,15 @@ const Contact = () => {
               }}
             >
               <h3 className="contact-card-title">🌐 Visit Us</h3>
-              <p className="contact-card-text">www.uventogenix.com</p>
+              <p className="contact-card-text">
+                <a
+                  href="https://www.linkedin.com/company/uvento-genix/"
+                  target="_blank"
+                  rel="noopener noreferrer "
+                >
+                  LikedIn
+                </a>{" "}
+              </p>
             </div>
           </div>
         </div>

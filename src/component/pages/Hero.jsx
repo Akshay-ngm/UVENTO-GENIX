@@ -25,6 +25,10 @@ const Hero = () => {
             <p className={styles["hero-subtitle"]}>
               Engineering Excellence Through Innovation Since 2021
             </p>
+            <p className={styles["hero-subtitle"]}>
+              Delivering reliable, high-performance industrial solutions—from
+              stabilizers to IoT systems.
+            </p>
             <div className={styles["hero-cta"]}>
               <a
                 href="#services-section"

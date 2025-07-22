@@ -142,8 +142,6 @@
 /* Responsive styles */
 @media (max-width: 768px) {
   .hero {
-    height: 70vh;
-    min-height: 70vh;
     background-attachment: scroll;
   }
 
@@ -164,8 +162,6 @@
 @media (max-width: 480px) {
   .hero {
     padding: 15px 0;
-    height: 70vh;
-    min-height: 70vh;
   }
 
   .hero-title h1 {
