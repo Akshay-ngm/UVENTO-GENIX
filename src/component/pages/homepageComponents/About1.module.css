@@ -1,0 +1,209 @@
+/* ABOUT SECTION - Updated for smooth header transition */
+.about {
+  padding: 20px 20px;
+  /* Changed from #0099cc to a gradient that flows from header blues */
+  /* background: linear-gradient(135deg, #003366 0%, #0066cc 50%, #0099cc 100%); */
+  background: linear-gradient(
+    135deg,
+    rgba(0, 102, 204, 0.85),
+    rgba(0, 64, 128, 0.9)
+  );
+
+  text-align: center;
+  padding-top: calc(12vh + 20px);
+  position: relative;
+}
+
+/* Add subtle overlay for depth */
+.about::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 51, 102, 0.1) 0%,
+    transparent 50%,
+    rgba(0, 153, 204, 0.1) 100%
+  );
+  pointer-events: none;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  /* Changed to white for better contrast on blue background */
+  color: #ffffff;
+  margin-bottom: 30px;
+  position: relative;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.about-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 80px;
+  height: 4px;
+  /* Changed to a light blue/white gradient */
+  background: linear-gradient(135deg, #66ccff, #ffffff);
+  transform: translateX(-50%);
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
+}
+
+.company-description {
+  font-size: 1.2rem;
+  /* Changed to light blue-white for readability */
+  color: #e6f3ff;
+  line-height: 1.8;
+  margin-bottom: 50px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.about-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.about-card {
+  /* Changed to soothing dark blue-grey gradient */
+  /* background: linear-gradient(
+    135deg,
+    rgba(30, 58, 87, 0.85),
+    rgba(44, 82, 130, 0.9)
+  ); */
+  background-image: linear-gradient(
+    135deg,
+    rgba(7, 89, 133, 0.9),
+    rgba(12, 74, 110, 0.85)
+  );
+
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  text-align: center;
+  border: 1px solid rgba(102, 204, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 153, 204, 0.1) 0%,
+    rgba(0, 51, 102, 0.08) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.about-card:hover::before {
+  opacity: 1;
+}
+
+.about-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+  border-color: rgba(102, 204, 255, 0.4);
+  background: linear-gradient(
+    135deg,
+    rgba(44, 82, 130, 0.9),
+    rgba(58, 96, 144, 0.95)
+  );
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 2px 4px rgba(0, 153, 204, 0.3));
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #66ccff;
+  margin-bottom: 15px;
+}
+
+.card-description {
+  font-size: 1.1rem;
+  color: #b3d9ff;
+  line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1028px) {
+  .about {
+    padding-top: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding-top: calc(6vh + 30px);
+  }
+
+  .about-title {
+    font-size: 2.2rem;
+  }
+
+  .company-description {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 60px 15px;
+    padding-top: calc(6vh + 30px);
+  }
+
+  .about-title {
+    font-size: 1.8rem;
+  }
+
+  .company-description {
+    font-size: 1rem;
+  }
+
+  .about-cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .about-card {
+    padding: 30px 20px;
+  }
+
+  .card-title {
+    font-size: 1.3rem;
+  }
+
+  .card-description {
+    font-size: 1rem;
+  }
+}

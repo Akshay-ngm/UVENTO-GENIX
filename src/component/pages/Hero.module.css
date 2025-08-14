@@ -4,9 +4,10 @@
       rgba(0, 153, 204, 0.3),
       rgba(0, 51, 102, 0.6)
     ),
-    url("/public/mechanical3.jpg");
+    url("/public/homepageImg.jpg");
   background-size: cover;
   background-position: center;
+  /* background-position: center calc(50% + 40px); */
   background-attachment: fixed;
   height: 100vh;
   min-height: 100vh;

@@ -1,27 +1,43 @@
-/* Base Styles */
+/* Updated Header Styles */
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* background: rgba(255, 255, 255, 0.9); */
-  background: linear-gradient(
+  /* background: linear-gradient(
     135deg,
     rgba(0, 153, 204, 0.4),
     rgba(0, 51, 102, 0.5)
+  ); */
+  /* background: linear-gradient(
+    to bottom,
+    rgba(0, 153, 204, 0.5) 0%,
+    rgba(0, 153, 204, 0.5) 15%,
+    rgba(0, 51, 102, 0.7) 15%,
+    rgba(0, 51, 102, 0.7) 85%,
+    rgba(0, 153, 204, 0.5) 85%,
+    rgba(0, 153, 204, 0.5) 100%
+  ); */
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 153, 204, 0.5),
+    rgba(0, 51, 102, 0.7),
+    rgba(0, 153, 204, 0.5)
   );
   backdrop-filter: blur(15px);
-  /* backdrop-filter: blur(10px); */
-  /* -webkit-backdrop-filter: blur(10px); */
-  padding: 0.75rem 2rem;
-  margin-left: 2%;
-  margin-right: 2%;
+  -webkit-backdrop-filter: blur(15px);
+  padding: 0 2rem;
+  /* margin-left: 2%;
+  margin-right: 2%; */
+  height: auto;
   position: fixed;
-  top: 1.5vh;
+  /* top: 1.5vh; */
   left: 0;
   right: 0;
   z-index: 1000;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  border-radius: 60px;
+  /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); */
+  box-shadow: 0 8px 20px rgba(0, 153, 204, 0.15),
+    0 4px 10px rgba(0, 51, 102, 0.2);
+  /* border-radius: 60px; */
   border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease;
 }
@@ -30,13 +46,20 @@
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
 }
 
+/* Logo Enhancements */
 .logo {
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  /* transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); */
   z-index: 10;
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.logo.logo-enter {
+  /* transform: scale(1.1) rotate(-2deg); */
+  animation: logoEnter 0.6s ease-out forwards;
 }
 
 .logo:hover {
@@ -72,37 +95,50 @@
 }
 
 .logo-icon {
-  height: 50px;
+  height: 13.4vh;
   width: auto;
   margin-right: 0.5rem;
-  margin-left: 1rem;
+  margin-left: 2rem;
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
-  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   position: relative;
   z-index: 2;
+  animation: logoGlow 4s ease-in-out infinite;
 }
 
 .logo:hover .logo-icon {
-  filter: drop-shadow(0 8px 16px rgba(0, 153, 204, 0.3))
+  filter: drop-shadow(0 8px 16px rgba(0, 153, 204, 0.5))
     drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
 }
 
-/* Add floating animation */
-@keyframes logoFloat {
+/* Logo Glow Animation */
+@keyframes logoGlow {
   0%,
   100% {
-    transform: translateY(0px);
+    box-shadow: 0 0 10px rgba(0, 153, 204, 0.2);
   }
   50% {
-    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(0, 153, 204, 0.4);
+  }
+}
+@keyframes logoEnter {
+  0% {
+    transform: scale(0.2) rotate(0deg);
+  }
+  25% {
+    transform: scale(0.4) rotate(-3deg);
+  }
+  50% {
+    transform: scale(0.6) rotate(0deg);
+  }
+  75% {
+    transform: scale(0.8) rotate(3deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
   }
 }
 
-.logo-pulse .logo-icon {
-  animation: logoFloat 3s ease-in-out infinite;
-}
-
-/* Add subtle glow effect */
+/* Pulse and Glow Ring */
 .logo::after {
   content: "";
   position: absolute;
@@ -125,6 +161,8 @@
   transform: translate(-50%, -50%) scale(1);
 }
 
+/* Keep the rest of your nav styles unchanged unless you want refinement */
+
 .nav-links {
   display: flex;
   align-items: center;
@@ -133,7 +171,7 @@
 
 .nav-links a {
   text-decoration: none;
-  color: #334155;
+  color: #f0f8ff; /* soft white-blue */
   font-weight: 500;
   font-size: 0.95rem;
   transition: all 0.3s ease;
@@ -157,13 +195,12 @@
 .nav-links a.active::after {
   width: 100%;
 }
-
 .nav-links a:hover {
-  color: #0099cc;
+  color: #00ccff; /* brighter aqua on hover */
 }
 
 .nav-links a.active {
-  color: #0099cc;
+  color: #00ccff;
   font-weight: 600;
 }
 
@@ -245,12 +282,15 @@
 }
 
 /* Responsive */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1028px) {
   .header {
-    padding: 0.5rem 1.5rem;
-    margin-left: 1%;
-    margin-right: 1%;
-    top: 1vh;
+    padding: 0 1.5rem;
+    height: auto;
+  }
+
+  .logo-icon {
+    height: 50px;
+    margin-left: 0.5rem;
   }
 
   .logo::before {
@@ -268,16 +308,21 @@
     top: calc(100% + 10px);
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(0, 51, 102, 0.95); /* dark blue transparent */
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.2rem;
     padding: 1.5rem 2rem;
     display: none;
     border-radius: 20px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-links a {
+    color: #f0f8ff;
+    font-size: 1rem;
   }
 
   .nav-links.open {
@@ -285,28 +330,84 @@
     animation: slideDown 0.3s ease;
   }
 
-  .logo-icon {
-    height: 45px;
-    margin-left: 0.5rem;
+  .nav-links .contact-btn {
+    margin-right: 0;
+    text-align: center;
+    font-size: 1rem;
   }
 
   .hamburger {
     display: flex;
   }
+}
+/* Responsive for tablets and small laptops */
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 0 1.5rem;
+    height: 6vh;
+  }
+
+  .logo-icon {
+    height: 50px;
+    margin-left: 0.5rem;
+  }
+
+  .logo::before {
+    width: 55px;
+    height: 55px;
+  }
+
+  .logo::after {
+    width: 45px;
+    height: 45px;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    right: 0;
+    background: rgba(0, 51, 102, 0.95); /* dark blue transparent */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 1.5rem 2rem;
+    display: none;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-links a {
+    color: #f0f8ff;
+    font-size: 1rem;
+  }
+
+  .nav-links.open {
+    display: flex;
+    animation: slideDown 0.3s ease;
+  }
 
   .nav-links .contact-btn {
     margin-right: 0;
     text-align: center;
+    font-size: 1rem;
+  }
+
+  .hamburger {
+    display: flex;
   }
 }
 
+/* Responsive for small mobile devices */
 @media (max-width: 480px) {
   .header {
     padding: 0.5rem 1rem;
   }
 
   .logo-icon {
-    height: 40px;
+    height: 45px;
     margin-left: 0.25rem;
     margin-right: 0.25rem;
   }
@@ -326,7 +427,14 @@
   }
 
   .nav-links a {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    color: #f0f8ff;
+  }
+
+  .cta-button,
+  .nav-links .contact-btn {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.95rem;
   }
 }
 

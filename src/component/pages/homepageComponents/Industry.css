@@ -1,7 +1,15 @@
 /* Industries Section Styles */
 .industries {
   padding: 60px 20px;
-  background: #f8fafc;
+  /* background: #003366; */
+  /* background: #cbc3e3; */
+  /* background: #002942; */
+  /* background-color: rgba(203, 195, 227, 0.9); */
+  background-image: linear-gradient(
+    45deg,
+    /* Changed angle for differentiation */ rgba(0, 82, 163, 0.85),
+    rgba(0, 48, 95, 0.9)
+  );
 }
 
 .industries-container {
@@ -17,7 +25,9 @@
 
 .industries-badge {
   font-size: 2.5rem;
-  color: #2c3e50;
+  /* color: #2c3e50; */
+  color: #ffffff; /* White */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   margin-bottom: 50px;
   opacity: 0;
   transform: translateY(30px);
@@ -44,7 +54,7 @@
 .industries-title {
   font-size: 2rem;
   /* font-weight: 700; */
-  color: #1f2937;
+  color: rgba(240, 240, 240, 0.95);
   margin-bottom: 16px;
   opacity: 0;
   transform: translateY(20px);
@@ -65,7 +75,7 @@
 
 .industries-subtitle {
   font-size: 1.125rem;
-  color: #6b7280;
+  color: rgba(240, 240, 240, 0.95);
   max-width: 600px;
   margin: 0 auto;
   opacity: 0;
@@ -87,7 +97,7 @@
 }
 
 .industry-card {
-  background: white;
+  background: rgba(180, 200, 220, 0.25);
   padding: 24px;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -189,20 +199,20 @@
 .industry-name {
   font-size: 1rem;
   font-weight: 600;
-  color: #1f2937;
+  color: whitesmoke;
   margin-bottom: 8px;
   transition: color 0.3s ease;
 }
 
 .industry-description {
   font-size: 0.875rem;
-  color: #6b7280;
+  color: rgba(240, 240, 240, 0.95);
   line-height: 1.4;
 }
 
 /* Hover text colors */
 .automotive:hover .industry-name {
-  color: #3b82f6;
+  color: rgba(240, 240, 240, 0.95);
 }
 .engineering:hover .industry-name {
   color: #10b981;

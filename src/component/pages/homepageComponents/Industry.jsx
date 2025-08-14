@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 // import "./Industries.css";
+// import "./Industry.css";
 import "./Industry.css";
 
 const Industries = () => {

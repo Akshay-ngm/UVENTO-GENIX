@@ -27,19 +27,26 @@ const Header = () => {
           Home
         </Link>
         <Link
-          to="/products"
-          className={location.pathname === "/products" ? "active" : ""}
+          to="/About"
+          className={location.pathname === "/About" ? "active" : ""}
           onClick={() => setMobileMenuOpen(false)}
         >
-          Products
+          About
         </Link>
         <Link
-          to="/company"
-          className={location.pathname === "/company" ? "active" : ""}
+          to="/Products"
+          className={location.pathname === "/Products" ? "active" : ""}
+          onClick={() => setMobileMenuOpen(false)}
+        >
+          Services
+        </Link>
+        {/* <Link
+          to="/Company"
+          className={location.pathname === "/Company" ? "active" : ""}
           onClick={() => setMobileMenuOpen(false)}
         >
           Company
-        </Link>
+        </Link> */}
 
         <Link
           to="/contact"

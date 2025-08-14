@@ -1,20 +1,41 @@
 .about {
   padding: 20px 20px;
-  background: #ffffff;
+  /* background-color: #0099cc; */
+  background: linear-gradient(135deg, #003366 0%, #0066cc 50%, #0099cc 100%);
   text-align: center;
+  /* Add top padding to account for fixed header */
+  padding-top: calc(12vh + 20px); /* Header height + extra spacing */
+  position: relative;
 }
-
+.about::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 51, 102, 0.1) 0%,
+    transparent 50%,
+    rgba(0, 153, 204, 0.1) 100%
+  );
+  pointer-events: none;
+}
 .about-container {
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .about-title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #1e293b;
+  color: black;
   margin-bottom: 30px;
   position: relative;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .about-title::after {
@@ -24,14 +45,17 @@
   left: 50%;
   width: 80px;
   height: 4px;
-  background: linear-gradient(135deg, #0099cc, #003366);
+  /* background: linear-gradient(135deg, #0099cc, #003366); */
+  background: linear-gradient(135deg, #66ccff, #ffffff);
   transform: translateX(-50%);
   border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
 }
 
 .company-description {
   font-size: 1.2rem;
-  color: #475569;
+  /* color: #475569; */
+  color: #e6f3ff;
   line-height: 1.8;
   margin-bottom: 50px;
   max-width: 800px;
@@ -46,7 +70,8 @@
 }
 
 .about-card {
-  background: #ffffff;
+  /* background: #ffffff; */
+  background: #003366;
   padding: 40px 30px;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
@@ -79,7 +104,17 @@
   line-height: 1.6;
 }
 
+@media (max-width: 1028px) {
+  .about {
+    padding-top: 80px; /* Adjust for smaller header on tablet */
+  }
+}
+
 @media (max-width: 768px) {
+  .about {
+    padding-top: calc(6vh + 30px); /* Adjust for mobile header height */
+  }
+
   .about-title {
     font-size: 2.2rem;
   }
