@@ -1,14 +1,11 @@
 /* ABOUT SECTION - Updated for smooth header transition */
 .about {
   padding: 20px 20px;
-  /* Changed from #0099cc to a gradient that flows from header blues */
-  /* background: linear-gradient(135deg, #003366 0%, #0066cc 50%, #0099cc 100%); */
   background: linear-gradient(
     135deg,
     rgba(0, 102, 204, 0.85),
     rgba(0, 64, 128, 0.9)
   );
-
   text-align: center;
   padding-top: calc(12vh + 20px);
   position: relative;
@@ -38,10 +35,14 @@
   z-index: 1;
 }
 
+/* Hero Section Styles */
+.about-hero {
+  margin-bottom: 60px;
+}
+
 .about-title {
   font-size: 2.5rem;
   font-weight: 700;
-  /* Changed to white for better contrast on blue background */
   color: #ffffff;
   margin-bottom: 30px;
   position: relative;
@@ -55,7 +56,6 @@
   left: 50%;
   width: 80px;
   height: 4px;
-  /* Changed to a light blue/white gradient */
   background: linear-gradient(135deg, #66ccff, #ffffff);
   transform: translateX(-50%);
   border-radius: 2px;
@@ -64,36 +64,60 @@
 
 .company-description {
   font-size: 1.2rem;
-  /* Changed to light blue-white for readability */
   color: #e6f3ff;
   width: 100%;
   line-height: 1.8;
   margin-bottom: 50px;
-  /* max-width: 800px; */
   margin-left: 10px;
   margin-right: 10px;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
+/* Story Section Styles */
+.about-story {
+  margin-bottom: 60px;
+  padding: 40px 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(7, 89, 133, 0.6),
+    rgba(12, 74, 110, 0.7)
+  );
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(102, 204, 255, 0.2);
+}
+
+.story-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #66ccff;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.story-description {
+  font-size: 1.1rem;
+  color: #b3d9ff;
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Mission & Vision Cards */
 .about-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 40px;
+  margin-bottom: 60px;
 }
 
 .about-card {
-  /* Changed to soothing dark blue-grey gradient */
-  /* background: linear-gradient(
-    135deg,
-    rgba(30, 58, 87, 0.85),
-    rgba(44, 82, 130, 0.9)
-  ); */
   background-image: linear-gradient(
     135deg,
     rgba(7, 89, 133, 0.9),
     rgba(12, 74, 110, 0.85)
   );
-
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   padding: 40px 30px;
@@ -156,6 +180,87 @@
   line-height: 1.6;
 }
 
+/* Why Choose Us Section */
+.about-why {
+  margin-bottom: 40px;
+}
+
+.why-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #66ccff;
+  margin-bottom: 40px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.why-item {
+  background: linear-gradient(
+    135deg,
+    rgba(7, 89, 133, 0.7),
+    rgba(12, 74, 110, 0.8)
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 30px 25px;
+  border-radius: 15px;
+  text-align: center;
+  border: 1px solid rgba(102, 204, 255, 0.15);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.why-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 153, 204, 0.08) 0%,
+    rgba(0, 51, 102, 0.05) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.why-item:hover::before {
+  opacity: 1;
+}
+
+.why-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  border-color: rgba(102, 204, 255, 0.3);
+}
+
+.why-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  filter: drop-shadow(0 2px 4px rgba(0, 153, 204, 0.3));
+}
+
+.why-item-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #66ccff;
+  margin-bottom: 10px;
+}
+
+.why-item-description {
+  font-size: 1rem;
+  color: #b3d9ff;
+  line-height: 1.5;
+}
+
 /* Responsive adjustments */
 @media (max-width: 1028px) {
   .about {
@@ -175,6 +280,29 @@
   .company-description {
     font-size: 1.1rem;
   }
+
+  .story-title,
+  .why-title {
+    font-size: 1.8rem;
+  }
+
+  .story-description {
+    font-size: 1rem;
+  }
+
+  .about-story {
+    padding: 30px 15px;
+    margin-bottom: 40px;
+  }
+
+  .about-cards {
+    margin-bottom: 40px;
+  }
+
+  .why-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -191,9 +319,19 @@
     font-size: 1rem;
   }
 
+  .story-title,
+  .why-title {
+    font-size: 1.6rem;
+  }
+
+  .story-description {
+    font-size: 0.95rem;
+  }
+
   .about-cards {
     grid-template-columns: 1fr;
     gap: 20px;
+    margin-bottom: 30px;
   }
 
   .about-card {
@@ -206,5 +344,26 @@
 
   .card-description {
     font-size: 1rem;
+  }
+
+  .about-story {
+    padding: 25px 15px;
+    margin-bottom: 30px;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-item {
+    padding: 25px 20px;
+  }
+
+  .why-item-title {
+    font-size: 1.2rem;
+  }
+
+  .why-item-description {
+    font-size: 0.95rem;
   }
 }

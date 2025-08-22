@@ -7,7 +7,7 @@ import Home from "./component/pages/Home";
 import AboutUs from "./component/pages/AboutUs";
 import Products from "./component/pages/Products";
 import Company from "./component/pages/Company";
-import Contact from "./component/pages/Contact";
+import ContactUs from "./component/pages/ContactUs";
 import "./App.css";
 
 function App3() {
@@ -27,7 +27,7 @@ function App3() {
           <Route path="/products" element={<Products />} />
           {/* <Route path="/company" element={<Company />} /> */}
 
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/contact" element={<ContactUs />} />
         </Routes>
       </main>
     </Router>
